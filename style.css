@@ -2,27 +2,32 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; /* Inter is a more modern font choice */
-  background: #f1f5f9;
-  color: #0f172a;
-  line-height: 1.6;
-}
+
 
 /* --- Header / Hero --- */
 header {
-  background: radial-gradient(circle at top left, #4facfe, #00f2fe);
+  min-height: 40vh; /* Make it take up more screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Advanced Mesh Gradient */
+  background-color: #4facfe;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
   color: white;
-  text-align: center;
-  padding: 120px 20px;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Adds a stylish slanted bottom */
+  clip-path: ellipse(150% 100% at 50% 0%); /* Modern curved bottom */
 }
 
 header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  letter-spacing: -1px;
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(to right, #ffffff, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header p {
@@ -97,22 +102,26 @@ h2 {
 }
 
 /* --- Card Design --- */
+/* Update your body for a sleeker look */
+body {
+  background: #0f172a; /* Deep Navy/Black */
+  color: #f8fafc;
+}
+
+/* Glassmorphism Card */
 .project-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px; /* Curvier corners for a friendly look */
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03); /* Very transparent */
+  backdrop-filter: blur(10px); /* The "Glass" effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-  border-color: #4facfe;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #00f2fe;
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
 }
 
 .project-card h3 {
